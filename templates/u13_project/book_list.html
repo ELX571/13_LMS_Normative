@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Book List</h1>
+
+{% if perms.u13_project.add_book %}
+<a href="{% url 'u13_project:create' %}">+ Add Book</a>
+{% endif %}
+<hr>
+
+{% for book in object_list %}
+
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.author }}</p>
+
+{% if perms.u13_project.change_book %}
+<a href="{% url 'u13_project:update_book' book.id %}">Update</a>
+{% endif %}
+
+{% if perms.u13_project.delete_book %}
+<a href="{% url 'u13_project:delete_book' book.pk %}">
+    Delete
+</a>
+{% endif %}
+<hr>
+
+{% endfor %}
+
+{% endblock %}

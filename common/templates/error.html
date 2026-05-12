@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Too Many Requests</title>
+
+    <style>
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #0f172a;
+        }
+
+        .box{
+            width: 400px;
+            padding: 40px;
+            border-radius: 20px;
+            background: #1e293b;
+            text-align: center;
+            color: white;
+            box-shadow: 0 0 25px rgba(0,0,0,0.4);
+        }
+
+        h1{
+            font-size: 70px;
+            color: #ef4444;
+            margin-bottom: 10px;
+        }
+
+        h2{
+            margin-bottom: 15px;
+        }
+
+        p{
+            color: #cbd5e1;
+            margin-bottom: 25px;
+        }
+
+        a{
+            text-decoration: none;
+            background: #ef4444;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        a:hover{
+            background: #dc2626;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="box">
+
+        <h1>429</h1>
+
+        <h2>Too Many Requests</h2>
+
+        <p>
+            Siz juda ko‘p request yubordingiz.
+            Iltimos bir necha soniyadan keyin qayta urinib ko‘ring.
+        </p>
+
+        <a href="/">Back Home</a>
+
+    </div>
+
+</body>
+</html>
