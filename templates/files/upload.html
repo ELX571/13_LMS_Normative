@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="box">
+        <h1>Upload File</h1>
+
+        <!-- enctype file yuborish uchun kerak -->
+        <!-- csrf_token xavfsizlik uchun kerak -->
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <input type="text" name="title" placeholder="Title">
+
+            <textarea name="content" placeholder="Content"></textarea>
+
+            <input type="file" name="file">
+
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+</div>
+
+<style>
+    .container{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+        height:80vh;
+    }
+
+    .box{
+        width:400px;
+        padding:30px;
+        border-radius:15px;
+        background:white;
+        box-shadow:0 0 10px rgba(0,0,0,0.1);
+    }
+
+    h1{
+        text-align:center;
+        margin-bottom:20px;
+    }
+
+    input, textarea{
+        width:100%;
+        padding:10px;
+        margin-bottom:15px;
+        border:1px solid #ccc;
+        border-radius:8px;
+    }
+
+    button{
+        width:100%;
+        padding:12px;
+        border:none;
+        border-radius:8px;
+        background:#2563eb;
+        color:white;
+        cursor:pointer;
+    }
+
+    button:hover{
+        background:#1d4ed8;
+    }
+</style>
+
+{% endblock %}

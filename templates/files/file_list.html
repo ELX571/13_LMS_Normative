@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    File List
+{% endblock %}
+
+{% block content %}
+
+<h1>File list</h1>
+
+<div class="book">
+
+    {% for file in files %}
+
+        <div class="card-book">
+
+            <h2>{{ file.title }}</h2>
+
+            <p>{{ file.content }}</p>
+
+            {% if file.img %}
+                <img src="{{ file.img.url }}" width="250" alt="no photo">
+            {% endif %}
+
+            {% if file.video %}
+                <br>
+                <a href="{{ file.video.url }}">
+                    Video
+                </a>
+            {% endif %}
+
+            {% if file.document %}
+                <br>
+                <a href="{{ file.document.url }}">
+                    File
+                </a>
+            {% endif %}
+
+        </div>
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}

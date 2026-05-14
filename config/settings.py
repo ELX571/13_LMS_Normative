@@ -12,6 +12,13 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 import environ
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Media fayllar URL manzili
+MEDIA_URL  = '/media/'
+
+# Server diskida qayerda saqlansin
+MEDIA_ROOT = BASE_DIR / 'media'
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,20 +50,18 @@ INSTALLED_APPS = [
     #Local
     'u13_project',
     'Base_File',
+    'file',
 
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'django.middleware.Base_File.CommonMiddleware',
+    'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    #local
-    'Base_File.middlewere.RateLimiter',
 ]
 
 ROOT_URLCONF = 'config.urls'
