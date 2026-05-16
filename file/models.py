@@ -1,5 +1,5 @@
 from django.db import models
-from Base_File.models import BaseModel
+from base.models import BaseModel
 
 
 class Document(BaseModel):

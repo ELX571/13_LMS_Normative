@@ -7,7 +7,7 @@ from config import settings
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('u13_project.urls')),
-    path('accounts/', include('account.urls')),
+    path('accounts/', include('accounts.urls')),
     path('file/', include('file.urls')),  # shu joy
 ]
 
